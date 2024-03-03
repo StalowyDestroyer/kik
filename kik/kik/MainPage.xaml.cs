@@ -20,5 +20,14 @@ namespace kik
         {
 
         }
+
+        private void DisplayWin()
+        {
+            if (turn)
+                DisplayAlert("Koniec gry!", "wygrywa x!", "wybieram creepera");
+            else
+                DisplayAlert("Koniec gry!", "wygrywa o!", "wybieram creepera");
+
+        }
     }
 }
