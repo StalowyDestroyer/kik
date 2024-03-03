@@ -68,5 +68,31 @@ namespace kik
         {
             CreateBoard();
         }
+
+        private void Move(object sender, EventArgs e)
+        {
+            Button clickedField = sender as Button;
+
+            if(clickedField.ClassId == "enabled")
+            {
+                if (turn)
+                    clickedField.Text = "x";
+                else
+                    clickedField.Text = "o";
+
+                DisableAll();
+
+                Grid parent = clickedField.Parent as Grid;
+                parent.BackgroundColor = Color.Transparent;
+
+                if (CheckForWin(parent))
+                    return;
+
+                int gridToEnable = parent.Children.IndexOf(clickedField);
+                EnableGrid(gridToEnable);
+
+                ChangeTurn();
+            }
+        }
     }
 }
