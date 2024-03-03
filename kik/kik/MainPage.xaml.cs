@@ -76,9 +76,15 @@ namespace kik
             if(clickedField.ClassId == "enabled")
             {
                 if (turn)
+                {
+                    clickedField.BackgroundColor = Color.DarkSlateBlue;
                     clickedField.Text = "x";
+                }
                 else
+                {
+                    clickedField.BackgroundColor = Color.DarkSlateGray;
                     clickedField.Text = "o";
+                }
 
                 DisableAll();
 
