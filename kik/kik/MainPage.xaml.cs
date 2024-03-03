@@ -67,5 +67,15 @@ namespace kik
                 foreach (Button button in grid.Children)
                     button.ClassId = "disabled";
         }
+
+        private void ChangeTurn()
+        {
+            turn = !turn;
+            if (turn)
+                TurnLabel.Text = "Kolejka: x";
+            else
+                TurnLabel.Text = "Kolejka: o";
+
+        }
     }
 }
